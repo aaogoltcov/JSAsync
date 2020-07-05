@@ -47,24 +47,24 @@ class AlarmClock {
     }
 
     static checkClock(id, array, time) {
-        if (id) {
+        if (id !== null) {
             if (array[array.findIndex(item => item['id'] === id)].time === time) {
-              array[array.findIndex(item => item['id'] === id)].callback;
+              array[array.findIndex(item => item['id'] === id)].callback();
             };
         } else {
             array.forEach(item => {
                 if (item.time === time) {
-                item.callback;
+                item.callback();
                 };
             });
         };
     };
 
     start() {
-        if (!this.timerId) {
-            this.timerId = setInterval(AlarmClock.checkClock(null,
-                                                             this.alarmCollection,
-                                                             this.getCurrentFormattedTime()), 60000);
+        if (this.timerId === null) {
+            this.timerId = setInterval(() => AlarmClock.checkClock(null,
+                                                                 this.alarmCollection,
+                                                                 this.getCurrentFormattedTime()), 1000);
         };
     }
 
