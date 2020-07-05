@@ -64,7 +64,7 @@ class AlarmClock {
         if (!this.timerId) {
             this.timerId = setInterval(AlarmClock.checkClock(null,
                                                              this.alarmCollection,
-                                                             this.getCurrentFormattedTime()), 1000);
+                                                             this.getCurrentFormattedTime()), 60000);
         };
     }
 
