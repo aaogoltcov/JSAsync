@@ -4,8 +4,6 @@ class AlarmClock {
     constructor(alarmCollection = [], timerId = null) {
         this.alarmCollection = alarmCollection;
         this.timerId = timerId;
-
-        console.log(this.alarmCollection.length);
     };
 
     static checkID = (_id, array) => {
